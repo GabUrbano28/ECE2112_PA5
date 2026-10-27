@@ -1,7 +1,7 @@
 # ECE2112_PA5
 ### Made by Antonio Gabriel L. Urbano | 2ECE-A
 ### EXPERIMENT 5: INTRODUCTION TO MATLAB PROGRAMMING
-The content of this repository contains the Programming Assignment 4 for our course "Advance Computer Programming and Algorithms" this S.Y. 2026-2027. This project covers three problems pertaining to Module 5: Introduction To MATLAB Programming
+The content of this repository contains the Programming Assignment 5 for our course "Advance Computer Programming and Algorithms" this S.Y. 2026-2027. This project covers three problems pertaining to Module 5: Introduction To MATLAB Programming
 
 ### Objectives
 The objectives of this experiment are to create real and complex matrices in MATLAB, distinguish transpose from complex-conjugate transpose operations, express a simultaneous linear system in matrix form, and to solve and check linear systems using the inverse method and Cramer's Rule. 
@@ -87,6 +87,29 @@ Matrix Z:
   -1.000 + 4.000i   6.000 + 0.000i
    5.000 - 2.000i   2.000 + 5.000i
 ```
+### Guide Questions
+```matlab
+%{
+ANSWERS TO PROBLEM A QUESTIONS:
+a. Which operations give identical results for the real matrix R?
+   All three operations transpose(R), R', and R.' yield identical 
+   results for the real matrix R because all entries are real numbers 
+   (imaginary parts are zero).
+
+b. Which two operations give identical results for the complex matrix Z?
+   transpose(Z) and Z.' give identical results. Both perform an unconjugated
+   matrix transpose, flipping rows and columns without
+   altering the signs of the imaginary components.
+
+c. What additional operation is performed by the apostrophe operator when 
+   the matrix contains complex entries?
+   The apostrophe operator (') performs a complex-conjugate transpose 
+   . In addition to swapping rows and columns, it 
+   takes the complex conjugate of each entry by negating the sign of its 
+   imaginary part.
+%}
+```
+ 
 ## 2. Two Methods for a Linear System 
 <img width="195" height="90" alt="image" src="https://github.com/user-attachments/assets/66d7a6a2-e372-4104-9ab6-a5aa4e708ff9" />
 
