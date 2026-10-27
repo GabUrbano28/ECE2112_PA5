@@ -9,7 +9,8 @@ The objectives of this experiment are to create real and complex matrices in MAT
 ## 1. Transpose Operations
 <img width="445" height="90" alt="image" src="https://github.com/user-attachments/assets/5e9afc3b-8e47-4eb4-824f-ed2a08ba1489" />
 
-### Requirement: Compute and Display three expressions `transpose(A)`,`A'`,`A.'`. A must be replaced by R and then by Z. 
+### Requirement: 
+- Compute and Display three expressions `transpose(A)`,`A'`,`A.'`. A must be replaced by R and then by Z. 
 
 ```matlab
 R = [ 5  -2   0   7; 
@@ -89,7 +90,12 @@ Matrix Z:
 ## 2. Two Methods for a Linear System 
 <img width="195" height="90" alt="image" src="https://github.com/user-attachments/assets/66d7a6a2-e372-4104-9ab6-a5aa4e708ff9" />
 
-### Requirement: Solve the given simultaneous system, create the coefficient matrix A and a right-hand-side vector b. Compute the solution using Inverse Method, and Cramer's Rule. Display both solutions and vectors including `det(A)`. Display `norm(x_inv-x_cramer)` and `norm(A*x_inv-b)`. The determinant must be a nonzero and both norms checks should be approximately zero to numerical precision. 
+### Requirement:
+- Solve the given simultaneous system,
+- Create the coefficient matrix A and a right-hand-side vector b.
+- Compute the solution using Inverse Method, and Cramer's Rule.
+- Display both solutions and vectors including `det(A)`. Display `norm(x_inv-x_cramer)` and `norm(A*x_inv-b)`.
+- The determinant must be a nonzero and both norms checks should be approximately zero to numerical precision. 
 
 ```matlab
 A = [ 2  -1   3   2; 
@@ -117,9 +123,9 @@ n = length(b);
 x_cramer = zeros(n, 1);
 
 for j = 1:n
-    A_temp = A;           % Make a copy of matrix A
-    A_temp(:, j) = b;     % Replace the j-th column with vector b
-    x_cramer(j) = det(A_temp) / det_A; % x_j = det(A_j) / det(A)
+    A_temp = A;           
+    A_temp(:, j) = b;     
+    x_cramer(j) = det(A_temp) / det_A;
 end
 
 disp('Solution via Cramer''s Rule (x_cramer):');
@@ -130,9 +136,9 @@ norm_diff = norm(x_inv - x_cramer);
 residual_norm = norm(A * x_inv - b);
 
 disp('Numerical Verification Checks');
-fprintf('Determinant of A, det(A)    = %.4f  (Must be non-zero)\n', det_A);
-fprintf('norm(x_inv - x_cramer)      = %e  (Approximately 0)\n', norm_diff);
-fprintf('norm(A*x_inv - b)          = %e  (Approximately 0)\n', residual_norm);
+fprintf('Determinant of A, det(A)    = 
+fprintf('norm(x_inv - x_cramer)      =
+fprintf('norm(A*x_inv - b)          = 
 
 if det_A ~= 0
     disp('Check Passed: det(A) is non-zero; unique solution exists. And both norms are approximately zero.');
