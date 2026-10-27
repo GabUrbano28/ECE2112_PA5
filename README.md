@@ -91,7 +91,7 @@ Matrix Z:
 <img width="195" height="90" alt="image" src="https://github.com/user-attachments/assets/66d7a6a2-e372-4104-9ab6-a5aa4e708ff9" />
 
 ### Requirement:
-- Solve the given simultaneous system,
+- Solve the given simultaneous system.
 - Create the coefficient matrix A and a right-hand-side vector b.
 - Compute the solution using Inverse Method, and Cramer's Rule.
 - Display both solutions and vectors including `det(A)`. Display `norm(x_inv-x_cramer)` and `norm(A*x_inv-b)`.
