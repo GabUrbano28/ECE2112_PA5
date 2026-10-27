@@ -6,15 +6,12 @@ The content of this repository contains the Programming Assignment 4 for our cou
 ### Objectives
 The objectives of this experiment are to create real and complex matrices in MATLAB, distinguish transpose from complex-conjugate transpose operations, express a simultaneous linear system in matrix form, and to solve and check linear systems using the inverse method and Cramer's Rule. 
 
-### 1. Transpose Operations
+## 1. Transpose Operations
 <img width="445" height="90" alt="image" src="https://github.com/user-attachments/assets/5e9afc3b-8e47-4eb4-824f-ed2a08ba1489" />
 
-#### Requirement: Compute and Display three expressions `transpose(A)`,`A'`,`A.'`. A must be replaced by R and then by Z. 
+### Requirement: Compute and Display three expressions `transpose(A)`,`A'`,`A.'`. A must be replaced by R and then by Z. 
 
 ```matlab
-disp('PROBLEM A: TRANSPOSE OPERATIONS');
-
-% 1. Define Real Matrix R and Complex Matrix Z
 R = [ 5  -2   0   7; 
       1   3  -4   2; 
       6   0   8  -1];
@@ -22,7 +19,6 @@ R = [ 5  -2   0   7;
 Z = [ 2+3i  -1+4i   5-2i; 
      -3+1i   6      2+5i];
 
-% 2. Transpose Operations on Real Matrix R
 disp('Real Matrix R');
 disp('Matrix R:');
 disp(R);
@@ -36,7 +32,6 @@ disp(R');
 disp('3) R.'':');
 disp(R.');
 
-% 3. Transpose Operations on Complex Matrix Z
 disp('Complex Matrix Z');
 disp('Matrix Z:');
 disp(Z);
@@ -50,22 +45,53 @@ disp(Z');
 disp('3) Z.'':');
 disp(Z.');
 ```
+### Output
 
-### 2. Two Methods for a Linear System 
+```text
+Real Matrix R
+Matrix R:
+    5  -2   0   7
+    1   3  -4   2
+    6   0   8  -1
+1) transpose(R):
+   5   1   6
+  -2   3   0
+   0  -4   8
+   7   2  -1
+2) R':
+   5   1   6
+  -2   3   0
+   0  -4   8
+   7   2  -1
+3) R.':
+   5   1   6
+  -2   3   0
+   0  -4   8
+   7   2  -1
+
+Complex Matrix Z
+Matrix Z:
+   2.000 + 3.000i  -1.000  + 4.000i   5.000 - 2.000i
+  -3.000 + 1.000i   6.000  + 0.000i   2.000 + 5.000i
+1) transpose(Z):
+   2.000 + 3.000i  -3.000 + 1.000i
+  -1.000 + 4.000i   6.000 + 0.000i
+   5.000 - 2.000i   2.000 + 5.000i
+2) Z':
+    2.000 - 3.000i  -3.000 - 1.000i
+  -1.000 - 4.000i   6.000 + 0.000i
+   5.000 + 2.000i   2.000 - 5.000i
+3) Z.':
+   2.000 + 3.000i  -3.000 + 1.000i
+  -1.000 + 4.000i   6.000 + 0.000i
+   5.000 - 2.000i   2.000 + 5.000i
+```
+## 2. Two Methods for a Linear System 
 <img width="195" height="90" alt="image" src="https://github.com/user-attachments/assets/66d7a6a2-e372-4104-9ab6-a5aa4e708ff9" />
 
-#### Requirement: Solve the given simultaneous system, create the coefficient matrix A and a right-hand-side vector b. Compute the solution using Inverse Method, and Cramer's Rule. Display both solutions and vectors including `det(A)`. Display `norm(x_inv-x_cramer)` and `norm(A*x_inv-b)`. The determinant must be a nonzero and both norms checks should be approximately zero to numerical precision. 
+### Requirement: Solve the given simultaneous system, create the coefficient matrix A and a right-hand-side vector b. Compute the solution using Inverse Method, and Cramer's Rule. Display both solutions and vectors including `det(A)`. Display `norm(x_inv-x_cramer)` and `norm(A*x_inv-b)`. The determinant must be a nonzero and both norms checks should be approximately zero to numerical precision. 
 
 ```matlab
-disp('PROBLEM B: TWO METHODS FOR A LINEAR SYSTEM');
-
-% System of Linear Equations:
-%  2x1 -  x2 + 3x3 + 2x4 =  16
-%   x1 + 4x2 - 2x3 +  x4 = -7
-%  3x1 + 2x2 +  x3 -  x4 =   6
-% -2x1 + 3x2 + 4x3 + 2x4 =   7
-
-% Define Coefficient Matrix A and Vector b
 A = [ 2  -1   3   2; 
       1   4  -2   1; 
       3   2   1  -1; 
@@ -80,7 +106,6 @@ disp('Right-Hand-Side Vector b:');
 disp(b);
 
 % 1. Inverse Method
-% x_inv = inv(A) * b
 x_inv = inv(A) * b;
 
 disp('Solution via Inverse Method (x_inv):');
@@ -114,5 +139,39 @@ if det_A ~= 0
 else
     disp('Check Failed: det(A) is zero.');
 end
+```
+### Output
+
+```text
+PROBLEM B: TWO METHODS FOR A LINEAR SYSTEM
+Coefficient Matrix A:
+     2    -1     3     2
+     1     4    -2     1
+     3     2     1    -1
+    -2     3     4     2
+
+Right-Hand-Side Vector b:
+    16
+    -7
+     6
+     7
+
+Solution via Inverse Method (x_inv):
+    2.0000
+   -1.0000
+    3.0000
+    1.0000
+
+Solution via Cramer's Rule (x_cramer):
+    2.0000
+   -1.0000
+    3.0000
+    1.0000
+
+Numerical Verification Checks
+Determinant of A, det(A)    = 280.0000  (Must be non-zero)
+norm(x_inv - x_cramer)      = 1.110223e-16  (Approximately 0)
+norm(A*x_inv - b)          = 2.664535e-15  (Approximately 0)
+Check Passed: det(A) is non-zero; unique solution exists. And both norms are approximately zero.
 ```
 
